@@ -109,7 +109,7 @@
 
                                 <br>
 
-                                <button  name="btn_agregar" id="btn_agregar"  value="Agregar"  class="btn btn-warning">agregar</button>
+                                <button  name="btn_agregar" id="btn_agregar"  value="Agregar"  class="btn btn-warning">Agregar</button>
                                 <button name="btn_modificar" id="btn_modificar" value="Modificar" class="btn btn-warning" >Modificar</button>  
                                 <button name="btn_eliminar" id="btn_eliminar" value="Eliminar"  class="btn btn-warning" >Eliminar</button>       
                                 <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>

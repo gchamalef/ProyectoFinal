@@ -16,8 +16,6 @@ import modelo.Proveedor;
  *
  * @author Diego
  */
-
-
 public class sr_proveedorees extends HttpServlet {
 
     /**
@@ -30,6 +28,7 @@ public class sr_proveedorees extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     Proveedor proveedor;
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -38,62 +37,45 @@ public class sr_proveedorees extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet sr_proveedorees</title>");            
+            out.println("<title>Servlet sr_empleado</title>");
             out.println("</head>");
             out.println("<body>");
-           // out.println("<h1>Servlet sr_proveedorees at " + request.getContextPath() + "</h1>");
-           
-          //proveedor.agregar();
-          
-          if ("agregar".equals(request.getParameter("btn_agregar"))){
-            proveedor = new Proveedor(Integer.valueOf(request.getParameter("txt_id")) ,request.getParameter("txt_proveedor"),request.getParameter("txt_nit"),request.getParameter("txt_direccion"),request.getParameter("txt_telefono"));
+            if ("Agregar".equals(request.getParameter("btn_agregar"))) {
+                proveedor = new Proveedor(Integer.parseInt(request.getParameter("txt_idproveedor")), request.getParameter("txt_proveedor"), request.getParameter("txt_nit"), request.getParameter("txt_direccion"), request.getParameter("txt_telefono"));
+                if (proveedor.agregar() > 0) {
+                    response.sendRedirect("proveedores.jsp");
+                    //  out.println("<h1>Ingreso Exitoso....................</h1>");
+                    // out.println("<a href ='index.jsp'>Regresar</a>");
+                } else {
+                    out.println("<h1>Error....................</h1>");
+                    out.println("<a href ='proveedores.jsp'>Regresar</a>");
+                }
+            }
 
-              if (proveedor.agregar()>0) {
-           
-                  response.sendRedirect("index.jsp");
-              }else{
-                   out.println("<h1>EROOR NO SE PUDO INGRESAR EL DATO </h1>");
-                   out.println("<a href='index.jsp'>Regresar</a>");
+            if ("Modificar".equals(request.getParameter("btn_modificar"))) {
+                proveedor = new Proveedor(Integer.parseInt(request.getParameter("txt_idproveedor")), request.getParameter("txt_proveedor"), request.getParameter("txt_nit"), request.getParameter("txt_direccion"), request.getParameter("txt_telefono"));
+                if (proveedor.modificar() > 0) {
+                    response.sendRedirect("proveedores.jsp");
+                    /* out.println("<h1>Ingreso Exitoso....................</h1>");
+                    out.println("<a href ='index.jsp'>Regresar</a>");*/
+                } else {
+                    out.println("<h1>Error....................</h1>");
+                    out.println("<a href ='proveedores.jsp'>Regresar</a>");
+                }
+            }
 
-              }
-               
-           }
-          
-          //proveedor.modificar();
-          
-          if ("modificar".equals(request.getParameter("btn_modificar"))){
-            proveedor = new Proveedor(Integer.valueOf(request.getParameter("txt_id")) ,request.getParameter("txt_proveedor"),request.getParameter("txt_nit"),request.getParameter("txt_direccion"),request.getParameter("txt_telefono"));
-
-              if (proveedor.modificar()>0) {
-           
-                  response.sendRedirect("index.jsp");
-              }else{
-                   out.println("<h1>EROOR NO SE PUDO INGRESAR EL DATO </h1>");
-                   out.println("<a href='index.jsp'>Regresar</a>");
-
-              }
-               
-           }
-          
-          
-          
-          
-          
-          if ("eliminar".equals(request.getParameter("btn_eliminar"))){
-             proveedor = new Proveedor(Integer.valueOf(request.getParameter("txt_id")) ,request.getParameter("txt_proveedor"),request.getParameter("txt_nit"),request.getParameter("txt_direccion"),request.getParameter("txt_telefono"));
-
-              if (proveedor.eliminar()>0) {
-                   response.sendRedirect("index.jsp");
-              }else{
-                   out.println("<h1>EROOR </h1>");
-                   out.println("<a href='index.jsp'>Regresar</a>");
-
-              }
-               
-           }
-          
-                      
-           out.println("</body>");
+            if ("Eliminar".equals(request.getParameter("btn_eliminar"))) {
+                proveedor = new Proveedor(Integer.parseInt(request.getParameter("txt_idproveedor")), request.getParameter("txt_proveedor"), request.getParameter("txt_nit"), request.getParameter("txt_direccion"), request.getParameter("txt_telefono"));
+                if (proveedor.eliminar() > 0) {
+                    response.sendRedirect("proveedores.jsp");
+                    //  out.println("<h1>Ingreso Exitoso....................</h1>");
+                    // out.println("<a href ='index.jsp'>Regresar</a>");
+                } else {
+                    out.println("<h1>Error....................</h1>");
+                    out.println("<a href ='proveedores.jsp'>Regresar</a>");
+                }
+            }
+            out.println("</body>");
             out.println("</html>");
         }
     }

@@ -20,6 +20,10 @@
         <servlet-name>sr_marcas</servlet-name>
         <servlet-class>controlador.sr_marcas</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>sr_proveedorees</servlet-name>
+        <servlet-class>controlador.sr_proveedorees</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>sr_logins</servlet-name>
         <url-pattern>/sr_logins</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>sr_marcas</servlet-name>
         <url-pattern>/sr_marcas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sr_proveedorees</servlet-name>
+        <url-pattern>/sr_proveedorees</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
