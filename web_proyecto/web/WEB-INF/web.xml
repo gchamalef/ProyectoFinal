@@ -12,6 +12,14 @@
         <servlet-name>sr_empleado</servlet-name>
         <servlet-class>controlador.sr_empleado</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>sr_productos</servlet-name>
+        <servlet-class>controlador.sr_productos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>sr_marcas</servlet-name>
+        <servlet-class>controlador.sr_marcas</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>sr_logins</servlet-name>
         <url-pattern>/sr_logins</url-pattern>
@@ -23,6 +31,14 @@
     <servlet-mapping>
         <servlet-name>sr_empleado</servlet-name>
         <url-pattern>/sr_empleado</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sr_productos</servlet-name>
+        <url-pattern>/sr_productos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sr_marcas</servlet-name>
+        <url-pattern>/sr_marcas</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
