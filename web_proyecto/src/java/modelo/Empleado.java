@@ -18,14 +18,15 @@ public class Empleado extends Persona {
     private Conexion cn;
     public Empleado(){}
 
-    public Empleado(int idPuesto, String dpi, String direccion, String fechaingreso, int id, int genero, String nombres, String apellidos, String telefono, String fecha_nacimiento) {
+    public Empleado(int idPuesto, String dpi, String direccion, String fecha_inicio_labores, String fechaingreso, int id, int genero, String nombres, String apellidos, String telefono, String fecha_nacimiento) {
         super(id, genero, nombres, apellidos, telefono, fecha_nacimiento);
         this.idPuesto = idPuesto;
         this.dpi = dpi;
         this.direccion = direccion;
+        this.fecha_inicio_labores = fecha_inicio_labores;
         this.fechaingreso = fechaingreso;
     }
-
+    
     public int getIdPuesto() {
         return idPuesto;
     }
@@ -72,7 +73,7 @@ public class Empleado extends Persona {
         try{
         cn = new Conexion();
         cn.abrir_conexion();
-        String query = "SELECT e.idEmpleado as id,e.nombres,e.apellidos,e.dirreccion,e.telefono,e.DPI,e.genero,e.fecha_nacimiento,e.fecha_inicio_labores,e.fechaingreso,p.puesto,p.idPuesto FROM empleados as e inner join puestos as p on e.idPuesto = p.idPuesto;";
+        String query = "SELECT e.idEmpleado as id,e.nombres,e.apellidos,e.dirreccion,e.telefono,e.DPI,case when e.genero = 0 then \"Hombre\" when e.genero = 1 then \"Mujer\" end as genero,e.fecha_nacimiento,e.fecha_inicio_labores,e.fechaingreso,p.puesto,p.idPuesto FROM empleados as e inner join puestos as p on e.idPuesto = p.idPuesto order by e.idEmpleado;";
         ResultSet consulta = cn.conexionBD.createStatement().executeQuery(query);
         String encabezado[] = {"id", "nombres", "apellidos","dirreccion","telefono","DPI","genero","fecha_nacimiento","fecha_inicio_labores","fechaingreso","puesto","idPuesto"};
         tabla.setColumnIdentifiers(encabezado);

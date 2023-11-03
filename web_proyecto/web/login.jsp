@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-         <link rel="stylesheet" href="estilos_login.css">
+         <link rel="stylesheet" href="Styles/login.css">
          <link rel="shortcut icon" href="imagen/icono.png" type="image/x-icon">
         <title>Login</title>
     </head>
@@ -29,11 +29,11 @@
                     <br/>
                     <input class="contraseña" type="password" name="txt_pass" placeholder=" ">
                     <br/><br/><br/>
-                    <input id="boton" type="submit" name="btn_ingresar" value="Login">
+                    <input id="boton" type="submit" name="btn_ingresar" value="Log in">
             </form>
             <br/>
             <p> ¿No tienes una cuenta? <a href='registro.jsp'>Sing up</a></p>
-            <div align="center"><img src="imagen/icono.png" style="width:50px; height:50px;"></div>
+            <br>
         </div>
         
         

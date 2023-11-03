@@ -1,0 +1,78 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 3 nov 2023, 05:13:23
+    Author     : pc01
+*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{ 
+    background-image: url(imagen/2.png);
+}
+#main-container{ /*posicion de la tabla e.e */
+    width: 800px;
+    margin: auto;
+    text-align: right;
+}
+#main-container-empleados{ /*posicion de la tabla e.e */
+    width: 1200px;
+    text-align: right;
+    padding: 0px 0px 20px 0px;
+    margin:auto;
+}
+
+table{ /*width-ancho de la tabla, text datos a la izquierda xd */
+    background-color: black; /*color tabla*/
+    text-align: left;
+    width: 100%; 
+    border-collapse: collapse;
+    color: white;
+    border-radius: 6px;
+    opacity: 0.8;
+}
+
+th, td{ /*separacion de datos*/
+    padding: 20px;
+    border-radius: 0px;
+}
+
+thead{/*posicion de la tabla e.e */
+    background-color:#0A0A57;/*color de parte de titulo*/
+    border-bottom: solid 5px #4E4E4D;/*color de borde que separa el tituloxd */
+    color: white;/*letra e.e */
+    text-align: center;
+    border-radius: 6px;
+}
+
+
+tr:hover td{/*iluminacion del los regidtros xd e.e */
+    background-color: #3399ff;
+    color: white;/*eltra al seleccionar*/
+    
+}
+#btn_nuevo{
+    width: 180px;
+    height: 45px;
+    border-radius: 6px;
+    background: #4E4E4D;
+    color:#ffffff;
+    font-size: 15px;
+    font-family: Segoe UI;
+    opacity: 0.8;
+    
+}
+.modal-content{
+    width:385px;
+    background: white;
+    color: black;
+    margin:auto;
+    margin-top: 80px;
+    padding: 5px 5px 10px 5px;
+    border-radius: 6px;
+    opacity: 0.9;
+    
+}

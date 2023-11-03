@@ -1,0 +1,82 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 3 nov 2023, 03:13:57
+    Author     : pc01
+*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+#cuadro{
+    width:380px;
+    background: #090909;
+    color: #ffffff;
+    margin:auto;
+    margin-top: 80px;
+    padding: 5px 5px 30px 5px;
+    border-top: 35px solid #141414;
+    border-right: 35px solid #141414;
+    border-left: 35px solid #141414;
+    border-radius: 6px;
+    opacity:0.8;
+}
+#cuadro2{
+    width:380px;
+    background: #090909;
+    color: #ffffff;
+    margin:auto;
+    margin-top: 30px;
+    padding: 5px 5px 30px 5px;
+    border-top: 35px solid #141414;
+    border-right: 35px solid #141414;
+    border-left: 35px solid #141414;
+    border-radius: 6px;
+    opacity:0.8;
+}
+.nombre{
+    width:300px;
+    height:40px;
+    border-radius: 6px;
+    font-family: Segoe UI;
+}
+.contraseña{
+    width:300px;
+    height:40px;
+    border-radius: 6px;
+    font-family: Segoe UI;
+}
+
+#boton{
+    width: 300px;
+    height: 45px;
+    border-radius: 6px;
+    background: blueviolet;
+    color:#ffffff;
+    font-size: 15px;
+    font-family: Segoe UI;
+    
+}
+#titulo{
+    text-align: center;
+    font-size: 30px;
+    font-family: Segoe UI;
+}
+#subtitulo1{
+    padding-left: 115px;
+    font-family: Segoe UI;
+}
+#subtitulo2{
+    padding-left: 107px;
+    font-family: Segoe UI;
+}
+#marca{
+    font-size: 30px;
+    padding-left: 190px;
+    font-weight: 900;
+}
