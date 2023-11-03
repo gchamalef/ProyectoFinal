@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package modelo;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -73,5 +74,8 @@ abstract class Persona {
     public int agregar() { return 0; }
     public int modificar() { return 0; }
     public int eliminar() { return 0;}
-    public void mostrar() {}
+    public DefaultTableModel leer() {
+        DefaultTableModel tabla = new DefaultTableModel();
+        return tabla;
+    }
 }
