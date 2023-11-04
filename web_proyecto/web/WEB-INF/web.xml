@@ -28,6 +28,10 @@
         <servlet-name>sr_usuarios</servlet-name>
         <servlet-class>controlador.sr_usuarios</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>sr_registro</servlet-name>
+        <servlet-class>controlador.sr_registro</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>sr_logins</servlet-name>
         <url-pattern>/sr_logins</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>sr_usuarios</servlet-name>
         <url-pattern>/sr_usuarios</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sr_registro</servlet-name>
+        <url-pattern>/sr_registro</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
