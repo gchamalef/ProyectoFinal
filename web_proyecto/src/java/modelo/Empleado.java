@@ -73,7 +73,7 @@ public class Empleado extends Persona {
         try{
         cn = new Conexion();
         cn.abrir_conexion();
-        String query = "SELECT e.idEmpleado as id,e.nombres,e.apellidos,e.dirreccion,e.telefono,e.DPI,case when e.genero = 0 then \"Hombre\" when e.genero = 1 then \"Mujer\" end as genero,e.fecha_nacimiento,e.fecha_inicio_labores,e.fechaingreso,p.puesto,p.idPuesto FROM empleados as e inner join puestos as p on e.idPuesto = p.idPuesto order by e.idEmpleado;";
+        String query = "SELECT e.idEmpleado as id,e.nombres,e.apellidos,e.dirreccion,e.telefono,e.DPI,case when e.genero = 0 then 'Hombre' when e.genero = 1 then 'Mujer' end as genero,e.fecha_nacimiento,e.fecha_inicio_labores,e.fechaingreso,p.puesto,p.idPuesto FROM empleados as e inner join puestos as p on e.idPuesto = p.idPuesto order by e.idEmpleado;";
         ResultSet consulta = cn.conexionBD.createStatement().executeQuery(query);
         String encabezado[] = {"id", "nombres", "apellidos","dirreccion","telefono","DPI","genero","fecha_nacimiento","fecha_inicio_labores","fechaingreso","puesto","idPuesto"};
         tabla.setColumnIdentifiers(encabezado);

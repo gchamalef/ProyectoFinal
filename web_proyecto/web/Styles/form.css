@@ -11,7 +11,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     padding: 0px;
 }
 body{ 
-    background-image: url(imagen/2.png);
+    background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
 }
 #main-container{ /*posicion de la tabla e.e */
     width: 800px;

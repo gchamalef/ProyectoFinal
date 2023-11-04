@@ -32,6 +32,14 @@
         <servlet-name>sr_registro</servlet-name>
         <servlet-class>controlador.sr_registro</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>sr_compras</servlet-name>
+        <servlet-class>controlador.sr_compras</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>sr_cliente</servlet-name>
+        <servlet-class>controlador.sr_cliente</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>sr_logins</servlet-name>
         <url-pattern>/sr_logins</url-pattern>
@@ -63,6 +71,14 @@
     <servlet-mapping>
         <servlet-name>sr_registro</servlet-name>
         <url-pattern>/sr_registro</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sr_compras</servlet-name>
+        <url-pattern>/sr_compras</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sr_cliente</servlet-name>
+        <url-pattern>/sr_cliente</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
