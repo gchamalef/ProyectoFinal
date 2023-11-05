@@ -124,7 +124,7 @@
 
                 <input class='proveedores' type="text"  name="text_nombreP" id="txt_nombreP"  required readonly>
 
-                <button type="button" name="btn_nuevo" id="btn_nuevoc" data-toggle="modal" data-target="#modal_proveedores" >Crear Proveedor</button>
+                <!-- <button type="button" name="btn_nuevo" id="btn_nuevoc" data-toggle="modal" data-target="#modal_proveedores" >Crear Proveedor</button> -->
             </form>    
 
             <br>
