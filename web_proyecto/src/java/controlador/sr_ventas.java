@@ -47,11 +47,17 @@ public class sr_ventas extends HttpServlet {
                 Total = Total + ventasD.getSubtotal();
             }
             if ("Pagar".equals(request.getParameter("btn_pagar"))) {
-                Ventas ventas = new Ventas(0, Integer.parseInt(request.getParameter("txt_nofactura")), request.getParameter("txt_serie"), Integer.parseInt(request.getParameter("txt_idCliente")), Integer.parseInt(request.getParameter("txt_idEmpleado")), request.getParameter("fecha_factura"));
+                Ventas ventas = new Ventas(Integer.parseInt(request.getParameter("txt_idVentas")), Integer.parseInt(request.getParameter("txt_nofactura")), request.getParameter("txt_serie"), Integer.parseInt(request.getParameter("txt_idCliente")), Integer.parseInt(request.getParameter("txt_idEmpleado")), request.getParameter("fecha_factura"));
                 if (ventas.agregar() > 0) {
+                    
+                    Datos.listador.forEach(_item -> {
+                        VentasDetalle ventasD = new VentasDetalle( _item.getCantidad(), _item.getProducto(), _item.getMarca(), _item.getPrecio_venta(), _item.getSubtotal(), _item.getIdVenta());
+                        ventasD.agregar();
+                    });
+                    Datos.listador.clear();
 
                     response.sendRedirect("VentasDetalle.jsp");
-                } else {
+                } else{
                     out.println("<h1>Error....................</h1>");
                     out.println("<a href ='VentasDetalle.jsp'>Regresar</a>");
                 }

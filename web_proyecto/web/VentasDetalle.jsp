@@ -54,7 +54,7 @@
             <!-- Inicia formulario de ventas -->
             <form action="sr_ventas" method="post">
                 <div id="xd">
-                    <button name="btn_pagar" id="btn_pagar"  value="Pagar" >Terminar la compra</button>
+                    <button name="btn_pagar" id="btn_pagar"  value="Pagar" >Terminar la venta</button>
                 </div>
                 <br>
                 <label id="tituloins" for="lbl_id_Ventas" Style="color: white;">ID Factura:</label>
