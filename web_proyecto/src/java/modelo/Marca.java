@@ -81,9 +81,10 @@ public class Marca {
                 datos[1] = consulta.getString("marca");
                 tabla.addRow(datos);
             }
-            cn.cerrar_conexion();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
+        } finally {
+            cn.cerrar_conexion();
         }
         return tabla;
 

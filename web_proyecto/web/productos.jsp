@@ -82,9 +82,6 @@
                                 <input type="file" name="imag" id="txt_imagen" class="form-control" onchange="guard(this)">
                                 <input type="text" Style="display: none;" name="nameimg" id="file" class="nameimg">
 
-
-                                <!--<input type="File" name="imagen" id="imagen"  required style="display:none;"> -->
-
                                 <br>
                                 <label for="lbl_precio_costo"><b>Precio costo:</b></label>
                                 <input type="number" step="0.01" name="txt_precio_costo" id="txt_precio_costo"  class="form-control" placeholder="0.00" required>
@@ -103,7 +100,6 @@
 
                                     String fecha = date.toString();
                                     out.println("<input class='form-control' type='text' name='fecha_factura' id='fecha_factura' value='" + fecha + "' readonly>");
-                                    //System.out.println("<input type='date' name='fechaFactura' id='fechaFactura' value="+date+" class='form-control' readonly>");
 
                                 %>
 
@@ -159,11 +155,10 @@
                     %>    
                 </tbody>
             </table>
-            <button type="button" name="btn_nuevo" id="btn_nuevo" data-toggle="modal" data-target="#modal_productos" onclick="limpiar()">Formulario</button>
+            <button type="button" name="btn_nuevo" id="btn_nuevo" data-toggle="modal" data-target="#modal_productos" onclick="limpiar()">Nuevo</button>
 
 
         </div>
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> 
@@ -189,8 +184,6 @@
                         id_m = target.parent().data('id_m');
                         producto = target.parents("tr").find("td").eq(1).html();
                         descripcion = target.parents("tr").find("td").eq(2).html();
-                        //imagen = target.parent("tr").find("td").eq(3).html(); //
-                        //imagen= target.parents("tr").find("td").eq(2).html();
                         precio_costo = target.parents("tr").find("td").eq(4).html();
                         precio_venta = target.parents("tr").find("td").eq(5).html();
                         existencia = target.parents("tr").find("td").eq(6).html();
@@ -199,8 +192,6 @@
                         $("#txt_idproducto").val(id);
                         $("#txt_producto").val(producto);
                         $("#txt_descripcion").val(descripcion);
-                        //$("#file").val(imagen); //
-                        //$("#txt_imagen").val(imagen);
                         $("#txt_precio_costo").val(precio_costo);
                         $("#txt_precio_venta").val(precio_venta);
                         $("#txt_existencia").val(existencia);

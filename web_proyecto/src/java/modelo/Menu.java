@@ -3,19 +3,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package modelo;
+
 import com.mysql.cj.protocol.Resultset;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 /**
  *
  * @author pc01
  */
 public class Menu {
+
     private String ruta;
     private int id;
     private String nombre;
-    private int productos ,marcas,empleados,puestos,clientes,proveedores,compras,ventas,usuarios;
+    private int productos, marcas, empleados, puestos, clientes, proveedores, compras, ventas, usuarios;
     Conexion cn;
 
     public Menu(String ruta, int id, String nombre) {
@@ -23,8 +26,11 @@ public class Menu {
         this.id = id;
         this.nombre = nombre;
     }
-    
-    public Menu(){};
+
+    public Menu() {
+    }
+
+    ;
 
     public String getRuta() {
         return ruta;
@@ -121,52 +127,53 @@ public class Menu {
     public void setUsuarios(int usuarios) {
         this.usuarios = usuarios;
     }
-    
-    public void LeerUrl(int i){
+
+    public void LeerUrl(int i) {
         cn = new Conexion();
         cn.abrir_conexion();
         try {
-        ResultSet consulta;
-        PreparedStatement parametro;
-        String query ="Select id,nombre,url from menu where id="+i+";";
-        parametro = (PreparedStatement)cn.conexionBD.prepareStatement(query);
-        consulta = parametro.executeQuery();
-        while(consulta.next()){
-            setRuta(consulta.getString("url"));
-            setNombre(consulta.getString("nombre"));
-        }
-        cn.cerrar_conexion();
-        }catch(SQLException ex){
+            ResultSet consulta;
+            PreparedStatement parametro;
+            String query = "Select id,nombre,url from menu where id=" + i + ";";
+            parametro = (PreparedStatement) cn.conexionBD.prepareStatement(query);
+            consulta = parametro.executeQuery();
+            while (consulta.next()) {
+                setRuta(consulta.getString("url"));
+                setNombre(consulta.getString("nombre"));
+            }
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
+        } finally {
+            cn.cerrar_conexion();
         }
-        
-        cn.cerrar_conexion();
     }
-    
-    public void Pureba(String aux){
+
+    public void Pureba(String aux) {
         cn = new Conexion();
         cn.abrir_conexion();
-        
+
         try {
-        ResultSet consulta;
-        PreparedStatement parametro;
-        String query ="SELECT productos,marcas,empleados,puestos,clientes,proveedores,ventas,compras,usuarios FROM usuarios where usuario='"+aux+"';";
-        parametro = (PreparedStatement)cn.conexionBD.prepareStatement(query);
-        consulta = parametro.executeQuery();
-        while(consulta.next()){
-           setProductos(consulta.getInt("productos"));
-            setMarcas(consulta.getInt("marcas"));
-            setEmpleados(consulta.getInt("empleados"));
-            setPuestos(consulta.getInt("puestos"));
-            setClientes(consulta.getInt("clientes"));
-            setProveedores(consulta.getInt("proveedores")) ;
-            setVentas(consulta.getInt("ventas"));
-            setCompras(consulta.getInt("ventas"));
-            setUsuarios(consulta.getInt("usuarios"));
-        }
-        }catch(SQLException ex){
+            ResultSet consulta;
+            PreparedStatement parametro;
+            String query = "SELECT productos,marcas,empleados,puestos,clientes,proveedores,ventas,compras,usuarios FROM usuarios where usuario='" + aux + "';";
+            parametro = (PreparedStatement) cn.conexionBD.prepareStatement(query);
+            consulta = parametro.executeQuery();
+            while (consulta.next()) {
+                setProductos(consulta.getInt("productos"));
+                setMarcas(consulta.getInt("marcas"));
+                setEmpleados(consulta.getInt("empleados"));
+                setPuestos(consulta.getInt("puestos"));
+                setClientes(consulta.getInt("clientes"));
+                setProveedores(consulta.getInt("proveedores"));
+                setVentas(consulta.getInt("ventas"));
+                setCompras(consulta.getInt("ventas"));
+                setUsuarios(consulta.getInt("usuarios"));
+            }
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
+        } finally {
+            cn.cerrar_conexion();
         }
-        
+
     }
 }

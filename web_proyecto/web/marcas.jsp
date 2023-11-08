@@ -23,7 +23,6 @@
     <%
         HttpSession misession = (HttpSession) request.getSession();
         if (misession.getAttribute("inicio") == "iniciado") {
-            //out.println("Hola")
             HttpSession usuario = (HttpSession) request.getSession();
             String aux2 = (String) usuario.getAttribute("user2");
             Menu menu2 = new Menu();
@@ -79,7 +78,7 @@
                         %>    
                     </tbody>
                 </table>
-                <button type="button" name="btn_nuevo" id="btn_nuevo" data-toggle="modal" data-target="#modal_marcas" onclick="limpiar()">Formulario</button>       
+                <button type="button" name="btn_nuevo" id="btn_nuevo" data-toggle="modal" data-target="#modal_marcas" onclick="limpiar()">Nuevo</button>       
 
             </div>
 

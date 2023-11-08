@@ -9,7 +9,6 @@ var ancho = $(document).width();
 
 function main (){
 	$('.menu_bar').click(function(){
-		// $('nav').toggle(); Forma Sencilla de aparecer y desaparecer
 		
 		if (contador === 1){
 			$('nav').animate({
@@ -25,7 +24,6 @@ function main (){
 		
 	});
 
-	// Mostramos y ocultamos submenus
 	$('.submenu').click(function(){
 		$(this).children('.children').slideToggle();
 	});

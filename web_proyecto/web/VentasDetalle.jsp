@@ -51,9 +51,7 @@
         <div id="cuadrox">
             <%@include file="clientes_ventas.jsp" %>
 
-            <%//action="sr_ventasdetalle" method="post"%>
-
-            <!-- - -  - - - - - - - - - - -  - - Inicia formulario de ventas - - - - - - - - - - - - - - -->
+            <!-- Inicia formulario de ventas -->
             <form action="sr_ventas" method="post">
                 <div id="xd">
                     <button name="btn_pagar" id="btn_pagar"  value="Pagar" >Terminar la compra</button>
@@ -88,17 +86,14 @@
 
                     String fecha = date.toString();
                     out.println("<input class='fecha' type='text' name='fecha_factura' id='fecha_factura' value='" + fecha + "' readonly>");
-                    //System.out.println("<input type='date' name='fechaFactura' id='fechaFactura' value="+date+" class='form-control' readonly>");
 
                 %>
                 <input type="text" Style="display:none;"  name="txt_idCliente" id="txt_idCliente"  readonly>
                 <input type="text" Style="display:none;"  name="txt_idEmpleado" id="txt_idEmpleado"  readonly>
             </form>
             <br>
-            <!-- - - - - - - - - - - - - - - - Finaliza formulario de ventas - - - - - - - - - - - -  - - -->
 
-
-            <!-- - - - - - - - - - - - - - - - Inicia formulario de los clientes  - - - - - - - - - - - -  - - -->
+            <!-- Inicia formulario de los clientes -->
             <form  method="post">
                 <label id="tituloins" for="lbl_idcliente"  Style="color: white;">Nit:</label>
 
@@ -150,9 +145,8 @@
 
                 <br>
             </form>
-            <!-- - - - - -  - - - - - - - - - - Finaliza formulario de Clientes - - - - - - - - - - - - - -   -->
 
-            <!-- - - - - - - - - - - - - - - -  Inicia formulario de ventasDetalle - - - - - - - - - - - - - -  -->
+            <!-- Inicia formulario de ventasDetalle -->
             <form class="formulario_vd">
                 <label id="tituloins" for="lbl_Producto" Style="color: white;"><b>Producto</b></label>
 
@@ -194,9 +188,7 @@
             </form>  
         </div>
 
-        <!-- - - - - - - - - - - -  - - - - Finaliza  Style="display:none;" formulario de ventasDetalle - - -  - - - - - -  - - - - -  -->
-
-        <!-- - - - - - - - - - - - - - - - Tabla Ventas detalle - - - - - - - - - - - - - - -->
+        <!-- Tabla Ventas detalle -->
         <%
             if ("agregar".equals(request.getParameter("btn_agregar"))) {
                 Producto prod = new Producto();
@@ -266,13 +258,12 @@
 
                 </tfoot>
 
-                <!-- - - - - - - - -  - - - - -  - - Finaliza tabla ventasDetalle  - - - - - - - - - - - - - - -->
+                <!-- Finaliza tabla ventasDetalle -->
 
             </table>
         </div>      
         <br>
         <br>
-        <%//out.println("<h1 Style='color: white;'>"+Datos.listador.size()+"</h1>");%>
 
         <script type="text/javascript">
             $("select[name=drop_producto]").change(function () {
@@ -281,7 +272,6 @@
                 var combo = document.getElementById("drop_precio");
                 var selected = combo.options[combo.selectedIndex].text;
                 document.getElementById("txt_precio").value = selected;
-                //('input[name=txt_precio]').val($(this).val(selected));
             });
 
             $("select[name=drop_clientes1]").change(function () {
@@ -307,8 +297,6 @@
                 var selected3 = combo3.options[combo3.selectedIndex].value;
 
                 document.getElementById("txt_idEmpleado").value = selected3;
-
-                //('input[name=txt_precio]').val($(this).val(selected));
             });
         </script>
 
@@ -342,5 +330,4 @@
     } else {
         response.sendRedirect("login.jsp");
     }
-
 %>

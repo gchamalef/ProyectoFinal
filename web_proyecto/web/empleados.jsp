@@ -93,7 +93,6 @@
 
                                     String fecha = date.toString();
                                     out.println("<input class='form-control' type='text' name='fecha_factura' id='fecha_factura' value='" + fecha + "' readonly>");
-                                    //System.out.println("<input type='date' name='fechaFactura' id='fechaFactura' value="+date+" class='form-control' readonly>");
 
                                 %>
 
@@ -151,7 +150,7 @@
 
                     </tbody>
                 </table>
-                <button type="button" name="btn_nuevo" id="btn_nuevo" data-toggle="modal" data-target="#modal_empleado" onclick="limpiar()">Formulario</button>
+                <button type="button" name="btn_nuevo" id="btn_nuevo" data-toggle="modal" data-target="#modal_empleado" onclick="limpiar()">Nuevo</button>
 
             </div>
         </div>

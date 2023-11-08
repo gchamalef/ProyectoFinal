@@ -57,7 +57,6 @@
         <%
             HttpSession misession = (HttpSession) request.getSession();
             if (misession.getAttribute("inicio") == "iniciado") {
-                //out.println("Hola");
                 HttpSession usuario = (HttpSession) request.getSession();
                 String aux2 = (String) usuario.getAttribute("user2");
                 Menu menu2 = new Menu();

@@ -24,7 +24,6 @@
         <%
             HttpSession misession = (HttpSession) request.getSession();
             if (misession.getAttribute("inicio") == "iniciado") {
-                //out.println("Hola");
                 HttpSession usuario = (HttpSession) request.getSession();
                 String aux2 = (String) usuario.getAttribute("user2");
                 Menu menu2 = new Menu();
@@ -77,7 +76,6 @@
 
                                     String fecha = date.toString();
                                     out.println("<input class='form-control' type='text' name='fecha_factura' id='fecha_factura' value='" + fecha + "' readonly>");
-                                    //System.out.println("<input type='date' name='fechaFactura' id='fechaFactura' value="+date+" class='form-control' readonly>");
 
                                 %>
 

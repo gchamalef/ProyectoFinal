@@ -36,7 +36,6 @@
                                 menu.LeerUrl(1);
                                 out.println("<li class='submenu'><a href='#' style='text-decoration: none; color: #FFFFFF'>"+menu.getNombre()+"</a>");
                                 out.println("<ul class='children'>");
-						 //
                                                  out.println("<li><a href='"+menu.getRuta()+"' style='text-decoration: none;'>Ver productos</a></li>");
 						 if(menu.getMarcas()==1){
                                                     menu.LeerUrl(2);
@@ -53,7 +52,6 @@
                                 menu.LeerUrl(3);
                                 out.println("<li class='submenu'><a href='#' style='text-decoration: none; color: #FFFFFF'>"+menu.getNombre()+"</a>");
                                 out.println("<ul class='children'>");
-						 //
                                                  out.println("<li><a href='"+menu.getRuta()+"' style='text-decoration: none;'>Ver Empleados</a></li>");
 						 if(menu.getPuestos()==1){
                                                     menu.LeerUrl(5);

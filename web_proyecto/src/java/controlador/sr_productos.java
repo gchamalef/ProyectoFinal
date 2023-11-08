@@ -40,6 +40,7 @@ public class sr_productos extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     Producto producto;
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -57,10 +58,12 @@ public class sr_productos extends HttpServlet {
             if ("Agregar".equals(request.getParameter("btn_agregar"))) {
                 producto = new Producto(Integer.parseInt(request.getParameter("txt_idproducto")), request.getParameter("txt_producto"), Integer.parseInt(request.getParameter("drop_marca")), request.getParameter("txt_descripcion"), Double.parseDouble(request.getParameter("txt_precio_costo")), Double.parseDouble(request.getParameter("txt_precio_venta")), Integer.parseInt(request.getParameter("txt_existencia")), request.getParameter("fecha_factura"), nombreIMAGEN);
                 if (producto.agregar() > 0) {
+                    
+                    String pathToSave = getServletContext().getRealPath("/img/") + File.separator + nombreIMAGEN;
 
                     Part Archivo = request.getPart("imag");
                     InputStream is = Archivo.getInputStream();
-                    File im = new File("C:/Users/pc01/Desktop/Progra1/ProyectoFinal/web_proyecto/web/img/" + nombreIMAGEN);
+                    File im = new File(pathToSave);
 
                     FileOutputStream ou = new FileOutputStream(im);
                     int d = is.read();
@@ -78,11 +81,14 @@ public class sr_productos extends HttpServlet {
             }
             //boton modificar
             if ("Modificar".equals(request.getParameter("btn_modificar"))) {
-                producto = new Producto(Integer.parseInt(request.getParameter("txt_idproducto")), request.getParameter("txt_producto"), Integer.parseInt(request.getParameter("drop_marca")), request.getParameter("txt_descripcion"), Double.parseDouble(request.getParameter("txt_precio_costo")), Double.parseDouble(request.getParameter("txt_precio_venta")), Integer.parseInt(request.getParameter("txt_existencia")), request.getParameter("fecha_factura"), nombreIMAGEN);
+                producto = new Producto( Integer.parseInt(request.getParameter("txt_idproducto")), request.getParameter("txt_producto"), Integer.parseInt(request.getParameter("drop_marca")), request.getParameter("txt_descripcion"), Double.parseDouble(request.getParameter("txt_precio_costo")), Double.parseDouble(request.getParameter("txt_precio_venta")), Integer.parseInt(request.getParameter("txt_existencia")), request.getParameter("fecha_factura"), nombreIMAGEN);
                 if (producto.modificar() > 0) {
+                    
+                    String pathToSave = getServletContext().getRealPath("/img/") + File.separator + nombreIMAGEN;
+                    
                     Part Archivo = request.getPart("imag");
                     InputStream is = Archivo.getInputStream();
-                    File im = new File("C:/Users/pc01/Desktop/Progra1/ProyectoFinal/web_proyecto/web/img/" + nombreIMAGEN);
+                    File im = new File(pathToSave);
 
                     FileOutputStream ou = new FileOutputStream(im);
                     int d = is.read();
@@ -100,7 +106,7 @@ public class sr_productos extends HttpServlet {
             }
             //boton eliminar
             if ("Eliminar".equals(request.getParameter("btn_eliminar"))) {
-                producto = new Producto(Integer.parseInt(request.getParameter("txt_idproducto")), request.getParameter("txt_producto"), Integer.parseInt(request.getParameter("drop_marca")), request.getParameter("txt_descripcion"), Double.parseDouble(request.getParameter("txt_precio_costo")), Double.parseDouble(request.getParameter("txt_precio_venta")), Integer.parseInt(request.getParameter("txt_existencia")), request.getParameter("fecha_factura"), nombreIMAGEN);
+                producto = new Producto( Integer.parseInt(request.getParameter("txt_idproducto")), request.getParameter("txt_producto"), Integer.parseInt(request.getParameter("drop_marca")), request.getParameter("txt_descripcion"), Double.parseDouble(request.getParameter("txt_precio_costo")), Double.parseDouble(request.getParameter("txt_precio_venta")), Integer.parseInt(request.getParameter("txt_existencia")), request.getParameter("fecha_factura"), nombreIMAGEN);
                 out.println("<h1>no se elimino........</h1>");
 
                 if (producto.eliminar() > 0) {

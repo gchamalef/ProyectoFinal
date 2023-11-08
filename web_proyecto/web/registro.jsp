@@ -38,7 +38,7 @@
                 <input id="boton" type="submit" name="btn_ingresar" value="Sing up">
             </form>
             <br/>
-            <p> ¿Ya tienes una cuenta? <a href='login.jsp'>Iniciar Sesion</a></p>
+            <p> ¿Ya tienes una cuenta? <a href='login.jsp'>Log in</a></p>
         </div>
 
 

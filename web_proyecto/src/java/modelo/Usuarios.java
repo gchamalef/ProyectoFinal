@@ -157,9 +157,10 @@ public class Usuarios {
                 tabla.addRow(datos);
 
             }
-            cn.cerrar_conexion();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
+        } finally {
+            cn.cerrar_conexion();
         }
         return tabla;
 
@@ -185,9 +186,10 @@ public class Usuarios {
             parametro.setInt(10, getUsuarios());
             parametro.setInt(11, getId());
             retorno = parametro.executeUpdate();
-            cn.cerrar_conexion();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
+        } finally {
+            cn.cerrar_conexion();
         }
 
         return retorno;

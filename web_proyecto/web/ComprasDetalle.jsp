@@ -81,7 +81,6 @@
 
                     String fecha = date.toString();
                     out.println("<input class='fechap' type='text' name='fecha_compra' id='fecha_compra' value='" + fecha + "' readonly>");
-                    //System.out.println("<input type='date' name='fechaFactura' id='fechaFactura' value="+date+" class='form-control' readonly>");
 
                 %>
 
@@ -124,7 +123,6 @@
 
                 <input class='proveedores' type="text"  name="text_nombreP" id="txt_nombreP"  required readonly>
 
-                <!-- <button type="button" name="btn_nuevo" id="btn_nuevoc" data-toggle="modal" data-target="#modal_proveedores" >Crear Proveedor</button> -->
             </form>    
 
             <br>
@@ -260,7 +258,6 @@
                 var combo = document.getElementById("drop_precio");
                 var selected = combo.options[combo.selectedIndex].text;
                 document.getElementById("txt_precio").value = selected;
-                //('input[name=txt_precio]').val($(this).val(selected));
             });
 
             $("select[name=drop_proveedores1]").change(function () {
