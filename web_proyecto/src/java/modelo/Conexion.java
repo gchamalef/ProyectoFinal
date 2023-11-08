@@ -15,9 +15,6 @@ import java.sql.SQLException;
 public class Conexion {
 
     public Connection conexionBD;
-    //jdbc:mysql://bc7jousq0ggm33vuf0ic-mysql.services.clever-cloud.com:3306/?user=u07whaz4ykd1dnnh
-    //mysql://u07whaz4ykd1dnnh:FZE0eKyfGy5w4VT1Ttk7@bc7jousq0ggm33vuf0ic-mysql.services.clever-cloud.com:3306/bc7jousq0ggm33vuf0ic
-    //Host: bc7jousq0ggm33vuf0ic-mysql.services.clever-cloud.com
     //jdbc:mysql://localhost:3306/?user=root
     private final String puerto = "3306";
     private final String bd = "bc7jousq0ggm33vuf0ic";
